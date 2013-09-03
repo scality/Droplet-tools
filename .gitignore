@@ -1,0 +1,6 @@
+*.o
+*~
+*.swp
+*.orig
+*.bak
+core
