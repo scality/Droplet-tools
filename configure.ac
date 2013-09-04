@@ -25,14 +25,14 @@ AC_ARG_WITH(droplet_include_dir,
 
 droplet_include_dir="$(cd $droplet_include_dir ; pwd)"
 
-DROPLET_CFLAGS="-I$droplet_include_dir $DROPLET_CFLAGS"
+LIBDROPLET_CFLAGS="-I$droplet_include_dir $LIBDROPLET_CFLAGS"
 
 AC_ARG_WITH(droplet_lib,
         [  --with-droplet-lib=
                           Specify linker cmd to link with droplet lib [default=-ldroplet]],
         [droplet_lib="$withval"],[droplet_lib="-ldroplet"])
 
-DROPLET_LIBS="$droplet_lib $DROPLET_LIBS"
+LIBDROPLET_LIBS="$droplet_lib $LIBDROPLET_LIBS"
 
 
 AC_ARG_WITH(json_c_include_dir,
@@ -53,8 +53,8 @@ JSON_LIBS="$json_c_lib $JSON_LIBS"
 
 AC_SUBST(JSON_CFLAGS)
 AC_SUBST(JSON_LIBS)
-AC_SUBST(DROPLET_CFLAGS)
-AC_SUBST(DROPLET_LIBS)
+AC_SUBST(LIBDROPLET_CFLAGS)
+AC_SUBST(LIBDROPLET_LIBS)
 
 
 PKG_CHECK_MODULES(LIBEDIT, libedit)
